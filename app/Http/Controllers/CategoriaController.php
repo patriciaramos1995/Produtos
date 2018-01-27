@@ -21,12 +21,24 @@ class CategoriaController extends Controller {
 	}
 
 
-	public function adiciona(){
+	public function adiciona($id = null){
 		$nome = Request::input('inputNomeCategoria');
 		$foto = Request::input('inputFoto');
+		if($id){
+			$categoria = Categoria::find($id);
+			$categoria->nome = $nome;
+
+			if(!empty($foto)){
+				$categoria->foto = $foto;
+			}
+
+			$categoria->update();
 
 
-		DB::insert('insert into categorias(nome,foto)values(?,?)',array($nome,$foto));
+		}else{
+			DB::insert('insert into categorias(nome,foto)values(?,?)',array($nome,$foto));
+		}
+		
 		return view('cadastro_categoria');
 	}
 
@@ -34,6 +46,12 @@ class CategoriaController extends Controller {
 		$categoria = Categoria::find($id);
 		$categoria->delete();
 		return redirect()->action('CategoriaController@lista');
+
+	}
+
+	public function edita($id){
+		$categoria = Categoria::find($id);
+		return view('cadastro_categoria')->with('categoria',$categoria);
 
 	}
 

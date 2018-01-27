@@ -15,10 +15,12 @@ Route::get('/produtos', 'ProdutoController@lista');
 Route::get('/categorias', 'CategoriaController@lista');
 Route::get('/categoriaCadastro', 'CategoriaController@cadastro');
 Route::get('/produtoCadastro', 'ProdutoController@cadastro');
-Route::get('/categorias/adiciona', 'CategoriaController@adiciona');
-Route::get('/produtos/adiciona', 'ProdutoController@adiciona');
+Route::get('/categorias/adiciona/{id?}', 'CategoriaController@adiciona');
+Route::get('/produtos/adiciona/{id?}', 'ProdutoController@adiciona');
 Route::get('/produtos/exclui/{id}', 'ProdutoController@exclui');
 Route::get('/categorias/exclui/{id}', 'CategoriaController@exclui');
+Route::get('/produtos/edita/{id}', 'ProdutoController@edita');
+Route::get('/categorias/edita/{id}', 'CategoriaController@edita');
 
 //Route::get('/', 'WelcomeController@index');
 
