@@ -14,7 +14,9 @@
 Route::get('/produtos', 'ProdutoController@lista');
 Route::get('/categorias', 'CategoriaController@lista');
 Route::get('/categoriaCadastro', 'CategoriaController@cadastro');
-Route::get('/categoriaProduto', 'ProdutoController@cadastro');
+Route::get('/produtoCadastro', 'ProdutoController@cadastro');
+Route::get('/categorias/adiciona', 'CategoriaController@adiciona');
+Route::get('/produtos/adiciona', 'ProdutoController@adiciona');
 
 //Route::get('/', 'WelcomeController@index');
 

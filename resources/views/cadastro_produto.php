@@ -1,22 +1,23 @@
 <html>
 	<body>
-		<form action="" method="post" enctype="multipart/form-data">
+		<form action="/DesafioProdutos/public/produtos/adiciona" enctype="multipart/form-data">
 		  <div class="form-group">
-		    <label for="inputNomeCategoria">Nome do produto:</label>
-		    <input type="text" class="form-control" id="inputNomeCategoria">
+		    <label for="inputNomeProduto">Nome do produto:</label>
+		    <input type="text" class="form-control" id="inputNomeProduto" name="inputNomeProduto">
 		  </div>
 		  <div class="form-group">
-			  {{ csrf_field() }}
-	    	  <input type="file" name="photo">
+		    <label for="inputDescricaoProduto">Descrição do produto:</label>
+		    <input type="text" class="form-control" id="inputDescricaoProduto" name="inputDescricaoProduto">
+		  </div>
+		  <div class="form-group">
+	    	  <input type="file" id="inputFoto" name="inputFoto">
     	  </div>
     	  <div class="form-group">
 		    <label for="selectCategorias">Categoria</label>
-		    <select multiple class="form-control" id="selectCategorias">
-		      <option>1</option>
-		      <option>2</option>
-		      <option>3</option>
-		      <option>4</option>
-		      <option>5</option>
+		    <select multiple class="form-control" id="selectCategorias" name="selectCategorias">
+		    	<?php foreach($categorias as $c): ?>	
+		      		<option value="<?=$c->id?>"><?=$c->nome?></option>
+		      	<?php endforeach ?>
 		    </select>
 		  </div>    	  
 		  <button type="submit" class="btn btn-primary">Salvar</button>
