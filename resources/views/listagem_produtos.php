@@ -1,5 +1,6 @@
 <html>
 	<body>
+
 		<h1>listagem de produtos</h1>
 
 		<table>
@@ -9,6 +10,7 @@
 					<td><?= $p->nome ?></td>
 					<td><?= $p->descricao ?></td>
 					<td><?= $p->foto ?></td>
+					<td><a href="/DesafioProdutos/public/produtos/exclui/<?=$p->id?>">Excluir</a></td>
 				</tr>
 			<?php endforeach ?>
 		</table>

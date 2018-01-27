@@ -17,6 +17,8 @@ Route::get('/categoriaCadastro', 'CategoriaController@cadastro');
 Route::get('/produtoCadastro', 'ProdutoController@cadastro');
 Route::get('/categorias/adiciona', 'CategoriaController@adiciona');
 Route::get('/produtos/adiciona', 'ProdutoController@adiciona');
+Route::get('/produtos/exclui/{id}', 'ProdutoController@exclui');
+Route::get('/categorias/exclui/{id}', 'CategoriaController@exclui');
 
 //Route::get('/', 'WelcomeController@index');
 

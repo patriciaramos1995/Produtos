@@ -3,6 +3,7 @@
 namespace produto\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Request;
+use produto\Models\Produto;
 
 class ProdutoController extends Controller {
 
@@ -10,7 +11,7 @@ class ProdutoController extends Controller {
 
 		$produtos = DB::select('select * from produtos');
 		
-		return view('listagem')->with('produtos',$produtos);
+		return view('listagem_produtos')->with('produtos',$produtos);
 
 	}
 
@@ -33,6 +34,13 @@ class ProdutoController extends Controller {
 
 		$categorias = DB::select('select * from categorias');
 		return view('cadastro_produto')->with('categorias',$categorias);
+	}
+
+	public function exclui($id){
+		$produto = Produto::find($id);
+		$produto->delete();
+		return redirect()->action('ProdutoController@lista');
+
 	}
 
 
