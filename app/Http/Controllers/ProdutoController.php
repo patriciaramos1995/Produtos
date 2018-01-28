@@ -72,6 +72,24 @@ class ProdutoController extends Controller {
 
 	}
 
+	public function busca(){
+		$busca = Request::input('buscaProduto');
+		$tipo = Request::input('tipoBusca');
+		if($tipo == "nome"){
+			$produtos = DB::select("select * from produtos where nome like '%".$busca."%'");
+		}else{
+			$produtos = DB::select("select p.id,p.nome,p.descricao,p.foto from produtos p inner join categoria__produtos cp
+			on p.id=cp.produto_id 
+			inner join categorias c on c.id=cp.categoria_id
+			where c.nome like '%".$busca."%'");
+		}
+
+
+		
+		return view('listagem_produtos')->with('produtos',$produtos);
+
+	}
+
 
 
 }

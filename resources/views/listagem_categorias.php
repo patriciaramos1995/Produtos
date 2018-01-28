@@ -3,7 +3,12 @@
 
 		<h1>listagem de Categorias</h1>
 		<a href="/DesafioProdutos/public/categoriaCadastro" class="btn btn-info" role="button">Novo</a>
-
+		<br>
+		<form action="/DesafioProdutos/public/categorias/busca">
+			<input type="text" id="buscaCategoria" name="buscaCategoria">
+			<input type="submit" class="btn btn-info"  value="Buscar">
+		<form>
+		<br>
 		<table>
 			<?php foreach($categorias as $c): ?>
 				<tr>

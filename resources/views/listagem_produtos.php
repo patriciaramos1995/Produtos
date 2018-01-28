@@ -3,6 +3,16 @@
 
 		<h1>listagem de produtos</h1>
 		<a href="/DesafioProdutos/public/produtoCadastro" class="btn btn-info" role="button">Novo</a>
+		<br>
+		<form action="/DesafioProdutos/public/produtos/busca">
+			<input type="text" id="buscaProduto" name="buscaProduto">
+			<select name="tipoBusca">
+				<option value="nome">Nome</option>
+				<option value="categoria">Categoria</option>
+			</select>
+			<input type="submit" class="btn btn-info"  value="Buscar">
+		<form>
+		<br>
 
 		<table>
 			<?php foreach($produtos as $p): ?>

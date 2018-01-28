@@ -57,6 +57,13 @@ class CategoriaController extends Controller {
 
 	}
 
+	public function busca(){
+		$nome = Request::input('buscaCategoria');
+		$categorias = DB::select("select * from categorias where nome like '%".$nome."%'");
+		return view('listagem_categorias')->with('categorias',$categorias);
+
+	}
+
 }
 
 ?>
