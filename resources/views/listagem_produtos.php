@@ -6,21 +6,37 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	</head>
 	<body>
-
-		<h1>listagem de produtos</h1>
+	<div class="col-lg-8">
+		<h1>Listagem de produtos</h1>
+		<br>
 		<a href="/DesafioProdutos/public/produtoCadastro" class="btn btn-info" role="button">Novo</a>
-		<br>
+		<br><br>
 		<form action="/DesafioProdutos/public/produtos/busca">
-			<input type="text" id="buscaProduto" name="buscaProduto">
-			<select name="tipoBusca">
-				<option value="nome">Nome</option>
-				<option value="categoria">Categoria</option>
-			</select>
-			<input type="submit" class="btn btn-info"  value="Buscar">
-		<form>
+			<div class="form-group col-lg-6">
+				<label>Pesquisar Produtos:</label>
+		    	<input type="text" class="form-control" id="buscaProduto" name="buscaProduto">
+		    </div>
+		    <div class="form-group col-lg-3">
+				<select name="tipoBusca" class="form-control">
+					<option value="nome">Nome</option>
+					<option value="categoria">Categoria</option>
+				</select>
+				<br>
+				<input type="submit" class="btn btn-info"  value="Buscar">
+			</div>
+			
+		</form>
 		<br>
 
-		<table>
+		<table class="table table-striped">
+			<tr>
+		      <th scope="col">#</th>
+		      <th scope="col">Nome</th>
+		      <th scope="col">Descrição</th>
+		      <th scope="col">Foto</th>
+		      <th scope="col"></th>
+		      <th scope="col"></th>
+		    </tr>
 			<?php foreach($produtos as $p): ?>
 				<tr>
 					<td><?= $p->id ?></td>
@@ -32,6 +48,6 @@
 				</tr>
 			<?php endforeach ?>
 		</table>
-
+	</div>
 	</body>
 </html>
