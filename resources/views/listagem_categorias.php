@@ -2,6 +2,7 @@
 	<body>
 
 		<h1>listagem de Categorias</h1>
+		<a href="/DesafioProdutos/public/categoriaCadastro" class="btn btn-info" role="button">Novo</a>
 
 		<table>
 			<?php foreach($categorias as $c): ?>

@@ -2,6 +2,7 @@
 	<body>
 
 		<h1>listagem de produtos</h1>
+		<a href="/DesafioProdutos/public/produtoCadastro" class="btn btn-info" role="button">Novo</a>
 
 		<table>
 			<?php foreach($produtos as $p): ?>

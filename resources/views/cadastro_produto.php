@@ -18,20 +18,19 @@
 		    	<?php foreach($categorias as $c): 
 
 		    		if(isset($categoria_produto)){
+						$json = json_encode($categoria_produto);
 
-		    		foreach($categoria_produto as $categoria):
-
-		    		if($categoria->categoria_id == $c->id){
+		    			if(strpos($json, 'categoria_id":'.$c->id.'') !== false){
 		    			?>
 		    				<option value="<?=$c->id?>" selected><?=$c->nome?></option>
 		    			<?php
-		    		}else{
-		    		?>	
-		      			<option value="<?=$c->id?>"><?=$c->nome?></option>
-		      			<?php 
-		      		}
-		      		endforeach; 
-		      	}else{
+			    		}
+			    		else{
+			    			?>
+			    			<option value="<?=$c->id?>"><?=$c->nome?></option>
+			    			<?php
+			    		}
+		    	   	}else{
 		      		?>
 		      			<option value="<?=$c->id?>"><?=$c->nome?></option>
 		      		<?php

@@ -39,7 +39,9 @@ class CategoriaController extends Controller {
 			DB::insert('insert into categorias(nome,foto)values(?,?)',array($nome,$foto));
 		}
 		
-		return view('cadastro_categoria');
+		$categorias = DB::select('select * from categorias');
+		
+		return view('listagem_categorias')->with('categorias',$categorias);
 	}
 
 	public function exclui($id){

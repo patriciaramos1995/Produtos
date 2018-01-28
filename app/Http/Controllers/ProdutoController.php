@@ -52,8 +52,9 @@ class ProdutoController extends Controller {
 		endforeach;
 		}
 
-		$categorias = DB::select('select * from categorias');
-		return view('cadastro_produto')->with('categorias',$categorias);
+		$produtos = DB::select('select * from produtos');
+		
+		return view('listagem_produtos')->with('produtos',$produtos);
 	}
 
 	public function exclui($id){
