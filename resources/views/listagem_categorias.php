@@ -1,15 +1,34 @@
 <html>
+	<head>
+		<link href="/DesafioProdutos/public/css/custom.css" rel="stylesheet">
+		<link href="/DesafioProdutos/public/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/DesafioProdutos/public/js/bootstrap.min.js" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	</head>
 	<body>
-
-		<h1>listagem de Categorias</h1>
+	<div class="col-lg-8">
+		<h1>Listagem de Categorias</h1>
+		<br>
 		<a href="/DesafioProdutos/public/categoriaCadastro" class="btn btn-info" role="button">Novo</a>
-		<br>
+		<br><br>
 		<form action="/DesafioProdutos/public/categorias/busca">
-			<input type="text" id="buscaCategoria" name="buscaCategoria">
-			<input type="submit" class="btn btn-info"  value="Buscar">
-		<form>
+			<div class="form-group col-lg-6">
+				<label>Pesquisar Categorias:</label>
+		    	<input type="text" class="form-control" id="buscaCategoria" name="buscaCategoria">
+		    	<br>
+		    	<input type="submit" class="btn btn-info"  value="Buscar">
+		    </div>
+			
+		</form>
 		<br>
-		<table>
+		<table class="table table-striped">
+			<tr>
+		      <th scope="col">#</th>
+		      <th scope="col">Nome</th>
+		      <th scope="col">Foto</th>
+		      <th scope="col"></th>
+		      <th scope="col"></th>
+		    </tr>
 			<?php foreach($categorias as $c): ?>
 				<tr>
 					<td><?= $c->id ?></td>
@@ -20,6 +39,6 @@
 				</tr>
 			<?php endforeach ?>
 		</table>
-
+	</div>
 	</body>
 </html>
