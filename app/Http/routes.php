@@ -21,6 +21,7 @@ Route::get('/produtos/exclui/{id}', 'ProdutoController@exclui');
 Route::get('/categorias/exclui/{id}', 'CategoriaController@exclui');
 Route::get('/produtos/edita/{id}', 'ProdutoController@edita');
 Route::get('/categorias/edita/{id}', 'CategoriaController@edita');
+Route::get('/categorias/busca', 'CategoriaController@busca');
 
 //Route::get('/', 'WelcomeController@index');
 
