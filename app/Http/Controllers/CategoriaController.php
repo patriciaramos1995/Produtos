@@ -23,7 +23,8 @@ class CategoriaController extends Controller {
 
 	public function adiciona($id = null){
 		$nome = Request::input('inputNomeCategoria');
-		$foto = Request::input('inputFoto');
+		$foto = Request::file('inputFoto');
+		
 		if($id){
 			$categoria = Categoria::find($id);
 			$categoria->nome = $nome;
@@ -62,11 +63,6 @@ class CategoriaController extends Controller {
 		$categorias = DB::select("select * from categorias where nome like '%".$nome."%'");
 		return view('listagem_categorias')->with('categorias',$categorias);
 
-	}
-
-	public function __construct()
-	{
-	    $this->middleware('auth');
 	}
 
 }

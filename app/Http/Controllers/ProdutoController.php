@@ -24,7 +24,7 @@ class ProdutoController extends Controller {
 	public function adiciona($id = null){
 		$nome = Request::input('inputNomeProduto');
 		$descricao = Request::input('inputDescricaoProduto');
-		$foto = Request::input('inputFoto');
+		$foto = Request::file('inputFoto');
 		$categoria = Request::input('selectCategorias');
 
 		if($id){
