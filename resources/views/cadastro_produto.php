@@ -9,7 +9,8 @@
 		<div class="col-lg-6">
 			<h1>Informações do produto:</h1>
 			<br>
-		<form action="/DesafioProdutos/public/produtos/adiciona<?= isset($produto) ? '/'.$produto->id : ''?>" enctype="multipart/form-data">
+		<form action="/DesafioProdutos/public/produtos/adiciona<?= isset($produto) ? '/'.$produto->id : ''?>" enctype="multipart/form-data" method="post">
+			<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>" />
 		  <div class="form-group">
 		    <label for="inputNomeProduto">Nome do produto:</label>
 		    <input type="text" class="form-control" id="inputNomeProduto" name="inputNomeProduto" value="<?=isset($produto) ? $produto->nome: ""?>">

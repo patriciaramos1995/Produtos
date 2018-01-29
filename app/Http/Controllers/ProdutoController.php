@@ -24,7 +24,7 @@ class ProdutoController extends Controller {
 	public function adiciona($id = null){
 		$nome = Request::input('inputNomeProduto');
 		$descricao = Request::input('inputDescricaoProduto');
-		$foto = Request::input('inputFoto');
+		$foto = Request::file('inputFoto');
 		$categoria = Request::input('selectCategorias');
 
 		if($id){
@@ -90,6 +90,38 @@ class ProdutoController extends Controller {
 
 	}
 
+	public function listaApi($id = null)
+    {
+    	if($id)
+    	{
+    		$produtos = Produto::find($id);
+
+    		if(!$produtos) {
+	            return response()->json([
+	                'message'   => 'Não existe produto com esse id.',
+	            ], 404);
+        	}
+
+    	}else{
+    		$produtos = Produto::all();	
+
+    		if(!$produtos) {
+	            return response()->json([
+	                'message'   => 'Não existem produtos a serem listados.',
+	            ], 404);
+        	}
+    	}
+        
+
+         
+
+        return response()->json($produtos);
+    }
+
+    public function __construct()
+	{
+	    $this->middleware('auth');
+	}
 
 
 }

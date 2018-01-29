@@ -15,8 +15,8 @@ Route::get('/produtos', 'ProdutoController@lista');
 Route::get('/categorias', 'CategoriaController@lista');
 Route::get('/categoriaCadastro', 'CategoriaController@cadastro');
 Route::get('/produtoCadastro', 'ProdutoController@cadastro');
-Route::get('/categorias/adiciona/{id?}', 'CategoriaController@adiciona');
-Route::get('/produtos/adiciona/{id?}', 'ProdutoController@adiciona');
+Route::post('/categorias/adiciona/{id?}', 'CategoriaController@adiciona');
+Route::post('/produtos/adiciona/{id?}', 'ProdutoController@adiciona');
 Route::get('/produtos/exclui/{id}', 'ProdutoController@exclui');
 Route::get('/categorias/exclui/{id}', 'CategoriaController@exclui');
 Route::get('/produtos/edita/{id}', 'ProdutoController@edita');
@@ -24,9 +24,12 @@ Route::get('/categorias/edita/{id}', 'CategoriaController@edita');
 Route::get('/categorias/busca', 'CategoriaController@busca');
 Route::get('/produtos/busca', 'ProdutoController@busca');
 Route::get('/principal', 'PrincipalController@principal');
+
+Route::get('/produtos/api/{id?}', 'ProdutoController@listaApi');
+
 //Route::get('/', 'WelcomeController@index');
 
-//Route::get('home', 'HomeController@index');
+Route::get('home', 'PrincipalController@principal');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

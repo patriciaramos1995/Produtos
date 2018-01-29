@@ -23,7 +23,8 @@ class CategoriaController extends Controller {
 
 	public function adiciona($id = null){
 		$nome = Request::input('inputNomeCategoria');
-		$foto = Request::input('inputFoto');
+		$foto = Request::file('inputFoto');
+		
 		if($id){
 			$categoria = Categoria::find($id);
 			$categoria->nome = $nome;
