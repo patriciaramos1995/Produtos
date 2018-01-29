@@ -24,9 +24,12 @@ Route::get('/categorias/edita/{id}', 'CategoriaController@edita');
 Route::get('/categorias/busca', 'CategoriaController@busca');
 Route::get('/produtos/busca', 'ProdutoController@busca');
 Route::get('/principal', 'PrincipalController@principal');
+
+Route::get('/produtos/api/{id?}', 'ProdutoController@listaApi');
+
 //Route::get('/', 'WelcomeController@index');
 
-//Route::get('home', 'HomeController@index');
+Route::get('home', 'PrincipalController@principal');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
