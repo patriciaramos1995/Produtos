@@ -12,11 +12,11 @@
 			<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>" />
 		  <div class="form-group">
 		    <label for="inputNomeCategoria">Nome da Categoria:</label>
-		    <input type="text" class="form-control" id="inputNomeCategoria" name="inputNomeCategoria" value="<?=isset($categoria) ? $categoria->nome: ""?>">
+		    <input type="text" class="form-control" id="inputNomeCategoria" name="inputNomeCategoria" value="<?=isset($categoria) ? $categoria->nome: ""?>"  required>
 		  </div>
 		  <div class="form-group">
 		  	  <label for="selectCategorias">Foto:</label><br>
-	    	  <input type="file" id="inputFoto" name="inputFoto" value="<?=isset($categoria) ? $categoria->foto :''?>">
+	    	  <input type="file" id="inputFoto" name="inputFoto" value="<?=isset($categoria) ? $categoria->foto :''?>" required>
     	  </div>
     	  <br>
     	  <button type="submit" class="btn btn-primary">Salvar</button>

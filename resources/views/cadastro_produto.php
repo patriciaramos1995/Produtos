@@ -13,19 +13,19 @@
 			<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>" />
 		  <div class="form-group">
 		    <label for="inputNomeProduto">Nome do produto:</label>
-		    <input type="text" class="form-control" id="inputNomeProduto" name="inputNomeProduto" value="<?=isset($produto) ? $produto->nome: ""?>">
+		    <input type="text" class="form-control" id="inputNomeProduto" name="inputNomeProduto" value="<?=isset($produto) ? $produto->nome: ""?>" required>
 		  </div>
 		  <div class="form-group">
 		    <label for="inputDescricaoProduto">Descrição do produto:</label>
-		    <input type="text" class="form-control" id="inputDescricaoProduto" name="inputDescricaoProduto" value="<?=isset($produto) ? $produto->descricao: ""?>">
+		    <input type="text" class="form-control" id="inputDescricaoProduto" name="inputDescricaoProduto" value="<?=isset($produto) ? $produto->descricao: ""?>" required>
 		  </div>
 		  <div class="form-group">
 		  	  <label for="selectCategorias">Foto:</label><br>
-	    	  <input type="file" id="inputFoto" name="inputFoto">
+	    	  <input type="file" id="inputFoto" name="inputFoto" required>
     	  </div>
     	  <div class="form-group">
 		    <label for="selectCategorias">Categorias:</label>
-		    <select multiple="multiple" class="form-control" id="selectCategorias" name="selectCategorias[]">
+		    <select multiple="multiple" class="form-control" id="selectCategorias" name="selectCategorias[]" required>
 		    	<?php foreach($categorias as $c): 
 
 		    		if(isset($categoria_produto)){
