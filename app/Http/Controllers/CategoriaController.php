@@ -25,6 +25,10 @@ class CategoriaController extends Controller {
 		$nome = Request::input('inputNomeCategoria');
 		$foto = Request::file('inputFoto');
 		
+		$foto->move(public_path().'/images/',$foto->getClientOriginalName());
+		$foto = $foto->getClientOriginalName();
+
+
 		if($id){
 			$categoria = Categoria::find($id);
 			$categoria->nome = $nome;

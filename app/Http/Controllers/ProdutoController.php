@@ -25,6 +25,9 @@ class ProdutoController extends Controller {
 		$nome = Request::input('inputNomeProduto');
 		$descricao = Request::input('inputDescricaoProduto');
 		$foto = Request::file('inputFoto');
+		$foto->move(public_path().'/images/',$foto->getClientOriginalName());
+		$foto = $foto->getClientOriginalName();
+		
 		$categoria = Request::input('selectCategorias');
 
 		if($id){

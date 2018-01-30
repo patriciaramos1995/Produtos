@@ -21,6 +21,15 @@
 		  </div>
 		  <div class="form-group">
 		  	  <label for="selectCategorias">Foto:</label><br>
+		  	  <?php
+		  	  if(isset($produto)){
+
+		  	  	$path = public_path().'/images/'.$produto->foto;
+		  	  	?>
+		  	  	<img src="/../../DesafioProdutos/public/images/<?=$produto->foto?>" width="100px"/>
+		  	  	<?php
+		  	  }
+		  	  ?>
 	    	  <input type="file" id="inputFoto" name="inputFoto" required>
     	  </div>
     	  <div class="form-group">
